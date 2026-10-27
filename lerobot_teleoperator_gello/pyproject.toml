@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_teleoperator_gello"
+version = "0.1.0"
+description = "GELLO to UR5e LeRobot leader plugin"
+requires-python = ">=3.10"
+# LeRobot is provided by the existing Conda environment.
+dependencies = [
+    'dynamixel-sdk>=3.7,<4',
+    'pyserial>=3.5,<4'
+]
+
+[tool.setuptools]
+packages = ["lerobot_teleoperator_gello"]
+package-dir = {"lerobot_teleoperator_gello" = "."}

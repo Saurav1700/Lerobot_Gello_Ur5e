@@ -1,0 +1,52 @@
+# Original six arm offsets plus GELLO motor 7 controlling OnRobot RG6.
+robot:
+  type: gello_ur5e
+  id: ur5e
+  ip: 195.148.65.50
+  gripper_ip: 195.148.65.33
+  gripper_open_width_mm: 100.0
+  gripper_closed_width_mm: 10.0
+  gripper_force_n: 60.0
+  gripper_min_delta_mm: 0.1
+  use_gripper: true
+  cameras:
+    wrist:
+      type: intelrealsense
+      serial_number_or_name: "021222072849"
+      color_mode: rgb
+      use_depth: false
+      width: 424
+      height: 240
+      fps: 30
+      warmup_s: 2
+    Opencv_video6:
+      type: opencv
+      index_or_path: /dev/video6 
+      color_mode: rgb
+      width: 640
+      height: 480
+      fps: 30
+      warmup_s: 2
+  servoj_t: 0.01  # 1 / 30 Hz
+  gripper_min_period_s: 0.025
+  # First GELLO action triggers one slow moveJ, then live following.
+  align_to_first_action: true
+  start_move_speed: 0.05
+  start_move_acc: 0.05
+teleop:
+  type: gello_ur5e
+  id: gello_legacy
+  port: /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTBEO977-if00-port0
+  baudrate: 57600
+  joint_ids: [1, 2, 3, 4, 5, 6]
+  joint_offsets_rad: [4.712, 3.142, 3.142, 3.142, 3.142, 3.142]
+  joint_signs: [1, 1, -1, 1, 1, 1]
+  use_gripper: true
+  gripper_id: 7
+  gripper_open_deg: 184.9855
+  gripper_closed_deg: 143.1855
+  use_async: true
+  smoothing: 0.99
+  read_period_s: 0.01
+fps: 100
+display_data: true

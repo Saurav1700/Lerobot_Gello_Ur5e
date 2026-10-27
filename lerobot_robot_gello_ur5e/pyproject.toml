@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_robot_gello_ur5e"
+version = "0.1.0"
+description = "GELLO to UR5e LeRobot robot plugin"
+requires-python = ">=3.10"
+# LeRobot is provided by the existing Conda environment.
+dependencies = [
+    'ur-rtde>=1.6,<2',
+    'pymodbus>=3.10,<4'
+]
+
+[project.optional-dependencies]
+realsense = ["pyrealsense2>=2.55,<3"]
+
+[tool.setuptools]
+packages = ["lerobot_robot_gello_ur5e"]
+package-dir = {"lerobot_robot_gello_ur5e" = "."}
