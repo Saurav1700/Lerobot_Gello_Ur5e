@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GELLO → UR5e LeRobot plugins
 
 Two independently installable plugins, tested with **LeRobot 0.4.4**:
@@ -139,3 +140,7 @@ Ctrl+C during startup requests stopJ; errors stop the move and abort the run.
 `--robot.align_to_first_action=false` disables automatic alignment and requires
 manual alignment as before. The optional `scripts/teleoperate_gello.py` launcher
 still provides the Enter gate if desired; the stock CLI starts following directly.
+=======
+# Lerobot_Gello_Ur5e
+Lerobot integration of gello
+>>>>>>> 633d058c6a8802a6535575d1b24af4ffa6ae5027
